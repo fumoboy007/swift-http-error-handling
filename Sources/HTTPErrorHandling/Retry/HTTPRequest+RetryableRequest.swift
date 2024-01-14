@@ -25,7 +25,8 @@ import Retry
 
 /// Adds `RetryableRequest` conformance to `HTTPRequest`.
 ///
-/// The `RetryableRequest` conformance adds safe retry methods to `HTTPRequest`.
+/// The [`RetryableRequest`](https://fumoboy007.github.io/swift-retry/documentation/retry/retryablerequest)
+/// conformance adds safe retry methods to `HTTPRequest`.
 ///
 /// - Important: The retry methods accept a closure that attempts the request. The closure must interpret the response
 ///    and throw ``HTTPApplicationError`` when the response represents a failure. Calling
@@ -33,9 +34,10 @@ import Retry
 ///    is a convenient way to do so.
 ///
 /// The `recoverFromFailure` closure is not called when the failure is due to ``HTTPApplicationError``. The
-/// retry method implementations automatically choose a recovery action for ``HTTPApplicationError`` using
-/// HTTP-specific information including whether the error is transient and the value of the `Retry-After` header,
-/// if present.
+/// retry method implementations automatically choose a
+/// [`RecoveryAction`](https://fumoboy007.github.io/swift-retry/documentation/retry/recoveryaction)
+/// for ``HTTPApplicationError`` using HTTP-specific information including whether the failure is transient and the
+/// value of the [`Retry-After`](https://httpwg.org/specs/rfc9110.html#field.retry-after) header, if present.
 ///
 /// - SeeAlso: [`Retry`](https://fumoboy007.github.io/swift-retry/documentation/retry/)
 extension HTTPRequest: RetryableRequest {
