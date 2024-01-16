@@ -23,9 +23,9 @@ let package = Package(
       // This library product and the corresponding target work around that limitation. The product name is
       // prefixed with an underscore to convey that the product was not meant to be externally visible.
       .library(
-         name: "_AdditionalSnippetDependencies",
+         name: "_AdditionalHTTPErrorHandlingSnippetDependencies",
          targets: [
-            "_AdditionalSnippetDependencies",
+            "_AdditionalHTTPErrorHandlingSnippetDependencies",
          ]
       ),
    ],
@@ -51,7 +51,7 @@ let package = Package(
          ]
       ),
       .target(
-         name: "_AdditionalSnippetDependencies",
+         name: "_AdditionalHTTPErrorHandlingSnippetDependencies",
          dependencies: [
             .product(name: "HTTPTypesFoundation", package: "swift-http-types"),
             .product(name: "Logging", package: "swift-log"),
